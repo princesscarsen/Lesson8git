@@ -8,12 +8,13 @@
  * @author cars5260
  */
 public class StudentGUI extends javax.swing.JFrame {
-
-    /**
-     * Creates new form StudentGUI
-     */
+    Student s[];
+    int size,currentstudent;
     public StudentGUI() {
         initComponents();
+        s=new Student[10];
+        size=10;
+        currentstudent=-1;
     }
 
     /**
@@ -39,7 +40,7 @@ public class StudentGUI extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        doubleleft = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -80,7 +81,12 @@ public class StudentGUI extends javax.swing.JFrame {
 
         txtmark3.setEditable(false);
 
-        jButton1.setText("<<");
+        doubleleft.setText("<<");
+        doubleleft.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doubleleftActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("<");
 
@@ -96,6 +102,11 @@ public class StudentGUI extends javax.swing.JFrame {
         });
 
         btnmodify.setText("Modify");
+        btnmodify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmodifyActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,7 +139,7 @@ public class StudentGUI extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton1)
+                                        .addComponent(doubleleft)
                                         .addGap(3, 3, 3)
                                         .addComponent(jButton2)
                                         .addGap(123, 123, 123))
@@ -191,7 +202,7 @@ public class StudentGUI extends javax.swing.JFrame {
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(doubleleft)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
@@ -232,6 +243,15 @@ public class StudentGUI extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnaddActionPerformed
 
+    private void btnmodifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmodifyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnmodifyActionPerformed
+
+    private void doubleleftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doubleleftActionPerformed
+        currentstudent=0;
+        showStudent();
+    }//GEN-LAST:event_doubleleftActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -270,7 +290,7 @@ public class StudentGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnadd;
     private javax.swing.JButton btnmodify;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton doubleleft;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
